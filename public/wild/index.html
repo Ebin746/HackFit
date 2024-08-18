@@ -10,22 +10,55 @@
         /* Set the height of the map */
         #map {
             height: 600px;
-            width: 100%;
+            width: 50vw;
         }
         .displayContainer{
             max-width: 700px;
         }
     </style>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-  <div class="displayContainer">
-    <h1>Forest Boundaries in Kerala</h1>
-    <div id="map"></div>
-  </div>
- <div class="feedback">
+    <div class="body">
+         <div class="displaycontainer">
+        <p>Forest Boundaries in Kerala</p>
+        <div id="map"></div>
+      </div>
+      <div class="container">
+        <div class="post">
+            <h2>Post Title</h2>
+            <p>This is an example of a post content. Users can comment below.</p>
+            <div class="upvote-section">
+                <button id="upvote-button">
+                    <span class="upvote-icon">▲</span> 
+                    <span id="upvote-count">0</span> Upvotes
+                </button>
+                <button id="downvote-button">
+                    <span class="downvote-icon">▼</span> 
+                    <span id="downvote-count">0</span> Downvotes
+                </button>
+            </div>
+        </div>
     
- </div>
+        <div class="comment-section">
+            <h3>Comments</h3>
+            <ul id="comment-list"></ul>
+        </div>
+    
+        <div class="comment-form">
+            <h4>Add a Comment</h4>
+            <textarea id="comment-input" placeholder="Write a comment..."></textarea>
+            <button id="submit-comment">Submit</button>
+        </div>
+    </div>
+</div>
+<a href="../index.html">hi</a>
+ <!-- <div class="feedback">
+    
+ </div> -->
     <!-- Leaflet JS -->
+    
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="mapLayer.js"></script>
   <script src="utils.js"></script>
