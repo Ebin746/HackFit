@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        /* Set the height of the map */
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+        .displayContainer{
+            max-width: 700px;
+        }
+    </style>
+</head>
+<body>
+  <div class="displayContainer">
+    <h1>Forest Boundaries in Kerala</h1>
+    <div id="map"></div>
+  </div>
+ <div class="feedback">
+    
+ </div>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="mapLayer.js"></script>
+  <script src="utils.js"></script>
+   <script src="userMarked.js"></script>
+    <script src="wlsdata.js"></script>
+    <script src="./backendRequest.js"></script>
+    <script src="./index.js"></script>
+    
+
+</body>
+</html>
