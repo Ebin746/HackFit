@@ -93,7 +93,7 @@ map.on("click", markpopup);
 reportForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  const animal = reportForm.querySelector('input[name="animal"]').value; // Assuming you changed to a dropdown
+  const animal = reportForm.querySelector('select[name="animal"]').value; // Changed to select
   const description = reportForm.querySelector(
     'textarea[name="description"]'
   ).value;
@@ -115,8 +115,7 @@ reportForm.addEventListener("submit", async (event) => {
         body: JSON.stringify({ ...report }),
       });
 
-      if (response) {
-        console.log(response);
+      if (response.ok) {
         console.log("Report sent successfully");
       } else {
         console.error("Failed to send report");
@@ -125,9 +124,6 @@ reportForm.addEventListener("submit", async (event) => {
       console.log(error);
     }
 
-    //
-
-    //
     console.log(report);
   } else {
     console.log("Please select a location on the map.");
