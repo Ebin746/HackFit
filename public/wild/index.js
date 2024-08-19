@@ -80,10 +80,10 @@ const checkConditions = (weatherData) => {
 
 // Monitor sanctuaries
 const monitorSanctuaries = async (sanctuary) => {
-  // const weatherData = await fetchWeatherData(sanctuary.lat, sanctuary.lng);
-  // if (weatherData) {
-  //   const isUnfavorable = checkConditions(weatherData);
-  let isUnfavorable = true;
+  const weatherData = await fetchWeatherData(sanctuary.lat, sanctuary.lng);
+  if (weatherData) {
+    const isUnfavorable = checkConditions(weatherData);
+ // let isUnfavorable = true;
   if (isUnfavorable) {
       weatherThreats=sanctuary
     console.log(`${sanctuary.name} is experiencing unfavorable conditions.`);
@@ -91,7 +91,7 @@ const monitorSanctuaries = async (sanctuary) => {
     console.log(`${sanctuary.name} has favorable conditions.`);
   }
 };
-//};
+};
 
 // Check wildfire proximity to sanctuaries
 const checkWildfireProximity = (wildfireData, sanctuaries) => {

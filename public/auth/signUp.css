@@ -87,3 +87,12 @@ a {
   color: green; /* Makes the text green */
   font-size: 18px; /* Increases the font size */
 }
+
+
+.location-button {
+  margin-top: 20px;
+}
+
+.location-button button {
+  margin: 5px;
+}
