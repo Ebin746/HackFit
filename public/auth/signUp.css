@@ -10,6 +10,8 @@ body {
 }
 
 .container {
+  position: absolute;
+  top:12%;
   background-color: white;
   padding: 20px;
   width: 35vw;
@@ -55,10 +57,12 @@ button:hover {
   width: 25%;
   height: 25%;
   border: 2px solid black;
+  box-shadow: rgba(128, 128, 128, 0.908) 3px 3px;
 }
 
 .mapbox {
-  border: 2px solid black;
+ border:2px solid transparent;
+ border-radius: 20px;
   margin-top: 20px;
   margin-right: 20px;
   width: 50%;
