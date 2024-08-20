@@ -1,18 +1,19 @@
 //plot alredy marked areas
 let data;
-const feedBackContainer=document.querySelector(".feedback");
-const feedBackDisplayFunction=(data)=>{
-  
+let animalData;
+const feedBackContainer = document.querySelector(".discription");
+const feedBackDisplayFunction = (data) => {
   const feedbackDiv = document.createElement("div");
   feedbackDiv.classList.add("feedback-item");
   feedbackDiv.innerHTML = `
     <h3>Threat Detected</h3>
+  
     <p><strong>Animal:</strong> ${data.animal}</p>
     <p><strong>Description:</strong> ${data.description}</p>
   `;
 
-  feedBackContainer.appendChild(feedbackDiv)
-}
+  feedBackContainer.appendChild(feedbackDiv);
+};
 const cummunityMarked = async () => {
   try {
     const response = await fetch("/animals");
@@ -34,20 +35,18 @@ const cummunityMarked = async () => {
         .setLatLng([item.lat, item.lng])
         .setContent(`${item.animal}`)
         .openOn(map);
-     while(feedBackContainer.firstChild){
-      feedBackContainer.removeChild(feedBackContainer.firstChild);
-     }
-          feedBackDisplayFunction(item)
-     
-     
-     
-        console.log("clicked")
+      while (feedBackContainer.firstChild) {
+        feedBackContainer.removeChild(feedBackContainer.firstChild);
+      }
+      feedBackDisplayFunction(item);
+
+      console.log("clicked");
     });
   });
 };
 
 const nearAlerts = (userLat, userLng) => {
-  data.map((alertAreas,i) => {
+  data.map((alertAreas, i) => {
     const distance = haversineDistance(
       userLat,
       userLng,
@@ -55,9 +54,8 @@ const nearAlerts = (userLat, userLng) => {
       alertAreas.lng
     );
     if (distance < RadiusThreshold) {
- const{lat,lng,animal,description}=alertAreas
-        userMarkedThreats[i]={lat,lng,animal,description}
-
+      const { lat, lng, animal, description } = alertAreas;
+      userMarkedThreats[i] = { lat, lng, animal, description };
     }
   });
 };
